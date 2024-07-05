@@ -29,6 +29,9 @@ try:
     df_postgres.printSchema()
     df_postgres.show(3)
 
+    # Limit to the first 40,000 records
+    df_toBeLoaded = df_postgres.limit(30000)
+
 
     # change job column into upper case
     # df_upper = df_postgres.withColumn("job_upper", upper(df_postgres['job']))
@@ -58,7 +61,7 @@ try:
     # incremental_data_df = df_postgres.join(existing_hive_data.select("id"), df_postgres["id"] == existing_hive_data["id"], "left_anti")
     #incremental_data_df = df_postgres.join(existing_hive_data, on = "", how = "left_anti")
     # Perform the left_anti join
-    incremental_data_df_anti = df_postgres.join(
+    incremental_data_df_anti = df_toBeLoaded.join(
         existing_hive_data,
         on=[
             "SquareFeet", 
