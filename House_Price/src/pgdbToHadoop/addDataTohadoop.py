@@ -30,7 +30,7 @@ try:
     df_postgres.show(3)
 
     # Limit to the first 40,000 records
-    df_toBeLoaded = df_postgres.limit(30000)
+    df_toBeLoaded = df_postgres.limit(40000)
 
 
     # change job column into upper case
