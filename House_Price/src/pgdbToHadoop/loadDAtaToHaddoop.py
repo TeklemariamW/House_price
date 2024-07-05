@@ -45,8 +45,8 @@ try:
     '''
     divide the data to into 30000, 10000, 10000
     '''
-    # load the first 30 000 data into hive
-    df_toBeLoaded = df_postgres[:30000]
+    # Divide the data to load only the first 30,000 rows into Hive
+    df_toBeLoaded = df_postgres.limit(30000)
 
    # Create Hive Internal table over project1db
     df_toBeLoaded.write.mode('overwrite').saveAsTable("{}.{}".format(hive_database_name, hive_table_name))
