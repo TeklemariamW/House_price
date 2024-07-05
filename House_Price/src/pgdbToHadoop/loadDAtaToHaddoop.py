@@ -42,8 +42,14 @@ try:
     hive_database_name = "tekle"
     hive_table_name = "house_price"
 
+    '''
+    divide the data to into 30000, 10000, 10000
+    '''
+    # load the first 30 000 data into hive
+    df_toBeLoaded = df_postgres[:30000]
+
    # Create Hive Internal table over project1db
-    df_postgres.write.mode('overwrite').saveAsTable("{}.{}".format(hive_database_name, hive_table_name))
+    df_toBeLoaded.write.mode('overwrite').saveAsTable("{}.{}".format(hive_database_name, hive_table_name))
 
     print("Data saved successfully to Hive table: ", hive_table_name)
 
