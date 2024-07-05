@@ -68,7 +68,8 @@ try:
             "Bedrooms", 
             "Bathrooms", 
             "Neighborhood", 
-            "YearBuilt"
+            "YearBuilt",
+            "Price"
         ],
         how="left_anti"
     )
