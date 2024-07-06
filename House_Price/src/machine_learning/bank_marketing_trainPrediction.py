@@ -99,3 +99,7 @@ accuracy = evaluator.evaluate(predictions)
 print("Accuracy:", accuracy)
 # Save the best model to the mounted volume
 cv_model.bestModel.save("/tmp/catbd125/Tekle/educatioModel")
+#cv_model.bestModel.write().overwrite().save("/tmp/catbd125/Tekle/educatioModel")
+#cv_model.bestModel.write().save("/tmp/catbd125/Tekle/newEducatioModel")
+
+#spark-submit --master yarn <file name>
