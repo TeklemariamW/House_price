@@ -56,7 +56,7 @@ df_last_10000 = df_postgres.limit(10000).subtract(df_first_40000)
 # Define a route to serve your data as JSON
 @app.route('/api/data', methods=['GET'])
 def get_data():
-    return jsonify(df.to_dict(orient='records'))
+    return jsonify(df_last_10000.to_dict(orient='records'))
 
 if __name__ == '__main__':
     #app.run(debug=True)
