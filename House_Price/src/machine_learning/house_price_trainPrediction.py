@@ -91,3 +91,4 @@ print("Accuracy:", accuracy)
 # if path is not spacified, model save under /user/ec2-user
 #cv_model.bestModel.save("/tmp/catbd125/Tekle/educatioModel")
 cv_model.bestModel.save("/tmp/catbd125/Tekle/housePrice")
+# spark-submit --master yarn <file name>
